@@ -154,6 +154,8 @@ endif
   NeoBundle 'Lokaltog/powerline', { 'rtp' : 'powerline/bindings/vim'}
   NeoBundle 'Shougo/neocomplcache'
   NeoBundle 'Shougo/neocomplete.vim'
+  NeoBundle 'Shougo/neosnippet'
+  NeoBundle 'Shougo/neosnippet-snippets'
   call neobundle#end()
   filetype plugin indent on     " required!
 

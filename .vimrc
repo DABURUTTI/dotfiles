@@ -126,7 +126,7 @@ if has("autocmd")
   augroup END
 endif
 
-
+set relativenumber
 call plug#begin()
 Plug 'cocopon/iceberg.vim'
 Plug 'powerline/powerline'

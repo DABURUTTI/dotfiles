@@ -131,7 +131,9 @@ call plug#begin()
 Plug 'cocopon/iceberg.vim'
 Plug 'powerline/powerline'
 Plug 'preservim/nerdtree'
+Plug 'cocopon/iceberg.vim'
 call plug#end()
+
 
 "================
 " NeoBundle
@@ -162,7 +164,6 @@ endif
  " 起動時にインストールチェック
 NeoBundleCheck
 
-colorscheme iceberg
 set laststatus=2
 set showtabline=2
 " set statusline=%F%m%h%w\ %<[ENC=%{&fenc!=''?&fenc:&enc}]\ [FMT=%{&ff}]\ [TYPE=%Y]\ %=[CODE=0x%02B]\ [POS=%l/%L(%02v)]
@@ -334,3 +335,7 @@ function! MyNeoCompleteCr() abort "{{{
     return "\<Left>\<Right>"
 endfunction "}}}
 "}}}
+colorscheme iceberg
+set bg=dark
+let g:lightline = { 'colorscheme': 'iceberg' }
+

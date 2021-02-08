@@ -103,4 +103,25 @@ set showtabline=2
 " /////////////////////////////////
 " // VIM-plugによるプラグインの導入 //
 " /////////////////////////////////
+call plug#begin()
+Plug 'cocopon/iceberg.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'scrooloose/nerdtree'
+call plug#end()
 
+
+set laststatus=2
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_idx_mode = 1
+let g:airline#extensions#whitespace#mixed_indent_algo = 1
+let g:airline_theme = 'tomorrow'
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+
+let g:airline_theme = 'powerlineish'
+colorscheme iceberg
+
+nnoremap <silent><C-e> :NERDTreeToggle<CR>

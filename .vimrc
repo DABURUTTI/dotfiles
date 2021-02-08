@@ -110,7 +110,9 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
 call plug#end()
 
-
+" /////////////////////////////////
+" // vim-airlineに関する設定         //
+" /////////////////////////////////
 set laststatus=2
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -121,7 +123,8 @@ if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
 
+" テーマをPowerLineっぽく
 let g:airline_theme = 'powerlineish'
 colorscheme iceberg
-
+" NERDTreeをショートカットで呼び出せるようにする
 nnoremap <silent><C-e> :NERDTreeToggle<CR>

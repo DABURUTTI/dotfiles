@@ -108,6 +108,7 @@ Plug 'cocopon/iceberg.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
+Plug 'mhinz/vim-startify'
 call plug#end()
 
 " /////////////////////////////////
@@ -124,7 +125,9 @@ if !exists('g:airline_symbols')
 endif
 
 " テーマをPowerLineっぽく
+set background=dark
 let g:airline_theme = 'powerlineish'
 colorscheme iceberg
 " NERDTreeをショートカットで呼び出せるようにする
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
+au VimEnter *  NERDTree

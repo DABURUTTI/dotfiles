@@ -8,10 +8,14 @@ if [[ ! -n $TMUX ]]; then
   if [[ -z "$ID" ]]; then
     tmux new-session
   fi
-  create_new_session="Create New Session"
-  ID="$ID\n${create_new_session}:"
+  create_new_session="新たなセッションを開始"
+  kill_all_task_and_Start="Tmuxサーバーをキルして、新たなセッションを開始"
+  ID="$ID\n${create_new_session}\n${kill_all_task_and_Start}"
   ID="`echo $ID | $ts | cut -d: -f1`"
   if [[ "$ID" = "${create_new_session}" ]]; then
+    tmux new-session
+  elif [[ "$ID" = "${kill_all_task_and_Start}" ]]; then
+    tmux kill-server
     tmux new-session
   elif [[ -n "$ID" ]]; then
     tmux attach-session -t "$ID"

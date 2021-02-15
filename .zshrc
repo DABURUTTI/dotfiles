@@ -53,6 +53,8 @@ zinit wait"!0" lucid light-mode for \
         zsh-users/zsh-autosuggestions \
     blockf atpull'zinit creinstall -q .' \
         zsh-users/zsh-completions \
+    atload"source init.sh" \
+        b4b4r07/enhancd
 
 function powerline_precmd() {
     PS1="$(powerline-shell --shell zsh $?)"

@@ -27,6 +27,8 @@ fi
 alias ls="ls -G"
 alias ll="ls -lG"
 alias la="ls -laG"
+alias pstart="pg_ctl -D /usr/local/var/postgres start"
+alias pstop="pg_ctl -D /usr/local/var/postgres stop"
 eval "$(anyenv init -)"
 alias brew="env PATH=${PATH//$(pyenv root)\/shims:/} brew"
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir newline vcs)
@@ -46,7 +48,7 @@ autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 ### End of Zinit's installer chunk
 
-zinit wait"!0" lucid light-mode for \
+zinit wait lucid light-mode for \
     atinit"zicompinit; zicdreplay" \
         zdharma/fast-syntax-highlighting \
     atload"_zsh_autosuggest_start" \
@@ -73,3 +75,4 @@ function install_powerline_precmd() {
 if [ "$TERM" != "linux" ]; then
     install_powerline_precmd
 fi
+export PGDATA=/usr/local/var/postgres
